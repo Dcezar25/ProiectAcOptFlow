@@ -1,0 +1,12 @@
+
+Start Horn-Schunck Math Core Test
+Input: Ix=10, It=-10, U_avg=0
+Output Raw: -42945576 (Q4.12 Fixed Point)
+Output Float: -10484.759765625
+Traceback (most recent call last):
+  File "C:\Users\CezarSefu\Desktop\prroiectac2\tests\test_hs_core.py", line 57, in <module>
+    test_hs_math_sanity()
+  File "C:\Users\CezarSefu\Desktop\prroiectac2\tests\test_hs_core.py", line 53, in test_hs_math_sanity
+    assert 4000 < u_out < 4200, f"Expected approx 4096 (1.0), got {u_out}"
+           ^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected approx 4096 (1.0), got -42945576

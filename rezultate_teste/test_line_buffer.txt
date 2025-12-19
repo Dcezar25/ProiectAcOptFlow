@@ -1,0 +1,9 @@
+
+Start Line Buffer Simulation
+Cycle 8: Input=8 -> Output Window=[0, 4, 8]
+Cycle 9: Input=9 -> Output Window=[1, 5, 9]
+>>> VERIFICATION PASS: Vertical column [1, 5, 9] correctly aligned!
+Cycle 10: Input=10 -> Output Window=[2, 6, 10]
+Cycle 11: Input=11 -> Output Window=[3, 7, 11]
+Cycle 12: Input=12 -> Output Window=[4, 8, 12]
+End Simulation

@@ -1,0 +1,38 @@
+
+# RAPORT 1: Varianta SINGLE SCALE (Normala)
+
+design -reset
+read_verilog PyramidalOpticalFlow.v
+
+# Setam TOP-ul pe varianta simpla
+hierarchy -check -top OpticalFlowTop
+
+# Sinteza
+proc; opt; fsm; opt; memory; opt
+synth_xilinx -family xc7
+opt_clean
+
+echo "--"
+echo ">>> REZULTATE PENTRU: SINGLE SCALE (OpticalFlowTop) <<<"
+echo "--"
+stat -tech xilinx
+
+
+# RAPORT 2: Varianta PIRAMIDALA (Multi-Scale)
+
+# Resetam design-ul pentru a incepe de la zero
+design -reset
+read_verilog PyramidalOpticalFlow.v
+
+# Setam TOP-ul pe varianta piramidala
+hierarchy -check -top PyramidalOpticalFlow
+
+# Sinteza
+proc; opt; fsm; opt; memory; opt
+synth_xilinx -family xc7
+opt_clean
+
+echo "--"
+echo ">>> REZULTATE PENTRU: PYRAMIDAL (PyramidalOpticalFlow) <<<"
+echo "--"
+stat -tech xilinx

@@ -1,0 +1,7 @@
+
+Start Gradient Simulation
+Cycle 3: Ix=400, Iy=0, It=65436
+Cycle 4: Ix=400, Iy=0, It=0
+>>> VERIFICATION PASS: Edge detected! Ix=400 (Expected positive)
+Cycle 5: Ix=0, Iy=0, It=0
+End Simulation

@@ -1,0 +1,6 @@
+
+Start Full System Simulation (FPGA Pipeline)
+Simulation finished. Processed 3969/4096 pixels.
+Max U detected: 0.0000
+Avg Motion Magnitude: 0.1000
+>>> WARNING: Motion signal too weak. Check sync or alpha.

@@ -1,0 +1,9 @@
+
+--- Testing Downsampler (64x64 -> 32x32)
+Input 4x2 pixels, Output: [100, 50]
+>>> Downsampler Test PASS!
+
+--- Testing Upsampler (Scale x2)
+Input: u=4096, v=2048
+Output: u=8192, v=4096
+>>> Upsampler Test PASS!

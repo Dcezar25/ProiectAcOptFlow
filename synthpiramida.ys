@@ -1,0 +1,23 @@
+# Script Sinteza Yosys pentru Piramida
+
+# 1. Citim noul fisier Verilog Piramidal
+read_verilog PyramidalOpticalFlow.v
+
+# 2. Setam noul Modul de TOP (Foarte Important!)
+hierarchy -check -top PyramidalOpticalFlow
+
+# 3. Procesul generic de optimizare
+proc; opt; fsm; opt; memory; opt
+
+# 4. Sinteza pentru Xilinx Artix-7
+synth_xilinx -family xc7
+
+# 5. Optimizare finala
+opt_clean
+
+# 6. Afisare Statistici (Aici vei vedea LUT-urile dublate)
+stat -tech xilinx
+
+# 7. Generare Schematica Vizuala
+# Va genera un fisier 'schematic_pyramid.dot'
+show -format dot -prefix schematic_pyramid PyramidalOpticalFlow

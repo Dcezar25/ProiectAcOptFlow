@@ -1,0 +1,24 @@
+# 1. Citim fișierul Verilog generat manual
+read_verilog OpticalFlowTop.v
+
+# 2. Verificăm ierarhia și setăm modulul de top
+hierarchy -check -top OpticalFlowTop
+
+# 3. Procesul generic de sinteză (transformă totul în logică de bază)
+proc; opt; fsm; opt; memory; opt
+
+# 4. Sinteza specifică pentru Xilinx Artix-7 (Placa ta)
+# Aceasta comandă mapează logica pe LUT-uri, DSP-uri și Carry-chains reale
+synth_xilinx -family xc7
+
+# 5. Optimizare finală și curățare
+opt_clean
+
+# 6. RAPORTARE (Aici primesti datele pentru proiect!)
+# Printează statistica detaliată
+stat -tech xilinx
+
+# 7. (Bonus A+) Generare Schematică vizuală
+# Îți face o poză cu circuitul logic. Necesită Graphviz instalat.
+# Dacă nu ai Graphviz, comentează linia de mai jos cu #
+show -format dot -prefix schematic_output OpticalFlowTop
